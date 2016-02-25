@@ -1,10 +1,12 @@
 class AskHandler
 
   def process params
+    return if Eat.count == 0
+
     selected_eat = Eat.random_eat
 
     "#{random_response} " \
-      "#{selected_eat.place} as suggested by #{selected_eat.added_by}."
+      "#{selected_eat} as suggested by #{selected_eat.user}."
   end
 
 

@@ -2,7 +2,7 @@ class ListHandler
 
   def process params
     Eat.all.map do |eat|
-      "#{eat.id}- #{eat.place} [#{eat.added_by}]"
+      "#{eat.id}- #{eat} [#{eat.user}]"
     end.join("\n")
   end
 

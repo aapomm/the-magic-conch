@@ -7,7 +7,7 @@ class AddHandler
       :slack_user_id => params[:user_id],
       :added_by => params[:user_name]
 
-    "#{restaurant} successfully added to the list!"
+    "*#{restaurant}* successfully added to the list!"
   end
 
 end

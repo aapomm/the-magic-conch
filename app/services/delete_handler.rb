@@ -7,7 +7,7 @@ class DeleteHandler
 
     if eat
       eat.destroy
-      return "#{eat.place} [#{eat.added_by}] successfully deleted."
+      return "#{eat} [#{eat.user}] successfully deleted."
     else
       return "Deletion failed."
     end
