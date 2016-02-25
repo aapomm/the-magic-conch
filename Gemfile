@@ -9,4 +9,6 @@ gem 'pg'
 
 gem 'puma'
 
+gem 'newrelic_rpm'
+
 gem 'thin', :group => :development
