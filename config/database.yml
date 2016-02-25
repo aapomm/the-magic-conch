@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: the_magic_conch_dev
+
+test:
+  <<: *default
+  database: the_magic_conch_test
+
+production:
+  <<: *default
+  database: the_magic_conch_production
