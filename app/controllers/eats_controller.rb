@@ -5,7 +5,9 @@ class EatsController < ApplicationController
 
     return if params[:token] != ENV['SLACK_TOKEN']
 
-    action = QueryAnalyzer.new.analyze(pure_text(params))
+    clean_text params
+
+    action = QueryAnalyzer.new.analyze params[:text]
     response = ::HandlerFactory.new.build(action).new.process params
 
     if response
@@ -17,8 +19,8 @@ class EatsController < ApplicationController
 
   private
 
-  def pure_text params
-    params[:text].sub params[:trigger_word], ''
+  def clean_text params
+    params[:text].sub! params[:trigger_word] + ' ', ''
   end
 
 end
